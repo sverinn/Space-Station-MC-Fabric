@@ -12,17 +12,6 @@ public class Wrench extends Item {
         super(settings);
     }
 
-    @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        if (!context.getWorld().isClient()) {
-            // Play the sound and specify location, category and who made the sound.
-            // No entity made the sound, so we specify null.
-            context.getWorld().playSound(null, context.getBlockPos(),
-                    WRENCH, SoundCategory.PLAYERS,
-                    1f, 1f);
-        }
 
-        return super.useOnBlock(context);
-    }
 }
 
