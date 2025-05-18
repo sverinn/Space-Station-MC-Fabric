@@ -14,5 +14,9 @@
   "genhit": {
     "subtitle": "sound.ssmc.genhit",
     "sounds": ["ssmc:genhit"]
+  },
+  "wirecutter": {
+    "subtitle": "sound.ssmc.wirecutter",
+    "sounds": ["ssmc:wirecutter"]
   }
 }

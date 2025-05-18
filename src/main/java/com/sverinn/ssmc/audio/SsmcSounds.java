@@ -19,6 +19,7 @@ public class SsmcSounds {
     public static final SoundEvent CROWBAR = registerSound("crowbar");
     public static final SoundEvent WRENCH = registerSound("wrench");
     public static final SoundEvent GENHIT = registerSound("genhit");
+    public static final SoundEvent CUTTERS = registerSound("wirecutter");
 
     // actual registration of all the custom SoundEvents
     private static SoundEvent registerSound(String id) {

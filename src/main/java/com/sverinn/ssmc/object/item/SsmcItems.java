@@ -16,6 +16,17 @@ import com.sverinn.ssmc.effects.SsmcEffects;
 
 public class SsmcItems {
 
+    public static Item register(Item item, String id) {
+        // Create the identifier for the item.
+        Identifier itemID = new Identifier(Ssmc.MOD_ID, id);
+
+        // Register the item.
+        Item registeredItem = Registry.register(Registries.ITEM, itemID, item);
+
+        // Return the registered item!
+        return registeredItem;
+    }
+
     public static final RegistryKey<ItemGroup> SSMC_FUN_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(Ssmc.MOD_ID, "fun"));
     public static final ItemGroup SSMC_FUN_ITEM_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(SsmcItems.BANANIUM))
@@ -48,16 +59,7 @@ public class SsmcItems {
             .statusEffect(new StatusEffectInstance(SsmcEffects.HONK_EFFECT, 6 * 20, 1), 1.0f)
             .build();
 
-    public static Item register(Item item, String id) {
-        // Create the identifier for the item.
-        Identifier itemID = new Identifier(Ssmc.MOD_ID, id);
 
-        // Register the item.
-        Item registeredItem = Registry.register(Registries.ITEM, itemID, item);
-
-        // Return the registered item!
-        return registeredItem;
-    }
 
     public static void initialize() {
         // Register the group.
@@ -104,20 +106,13 @@ public class SsmcItems {
             "rods"
     );
 
-   //public static final Item TILE_BLOCK_ITEM = new SsmcTileBlockItem(
-   //        SsmcBlocks.TILE, // Ваш блок
-   //        new Item.Settings()
-   //);
 
-    //public static final Item TILE_DARK = register(
-    //        // Ignore the food component for now, we'll cover it later in the food section.
-    //        new Item(new FabricItemSettings().maxCount(30)),
-    //        "tile/dark"
-    //);
-////
-    //public static final Item TILE_WHITE = register(
-    //        // Ignore the food component for now, we'll cover it later in the food section.
-    //        new Item(new FabricItemSettings().maxCount(30)),
-    //        "tile/white"
-    //);
+    public static final Item CUTTERS = register(
+            // Ignore the food component for now, we'll cover it later in the food section.
+            new Item(new FabricItemSettings().maxCount(1).fireproof()),
+            "cutters"
+    );
+
+
+
 }

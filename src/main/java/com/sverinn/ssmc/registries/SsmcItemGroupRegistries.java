@@ -16,8 +16,14 @@ public class SsmcItemGroupRegistries {
             itemGroup.add(BANANIUM);
             // ...
         });
+
         ItemGroupEvents.modifyEntriesEvent(SSMC_TOOLS_ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(CROWBAR);
+            // ...
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(SSMC_TOOLS_ITEM_GROUP_KEY).register(itemGroup -> {
+            itemGroup.add(CUTTERS);
             // ...
         });
 
