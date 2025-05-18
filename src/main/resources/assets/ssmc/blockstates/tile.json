@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "variant=dark": { "model": "ssmc:block/tile/dark"},
+    "variant=white": { "model": "ssmc:block/tile/white"},
+    "variant=glass": { "model": "ssmc:block/tile/glass"},
+    "variant=rglass": { "model": "ssmc:block/tile/rglass"}
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ssmc:tile",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{BlockStateTag: {variant: \"dark\"}}"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ssmc:tile",
+          "properties": {
+            "variant": 0
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ssmc:tile",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{BlockStateTag: {variant: \"white\"}}"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ssmc:tile",
+          "properties": {
+            "variant": 1
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ssmc:tile",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{BlockStateTag: {variant: \"glass\"}}"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ssmc:tile",
+          "properties": {
+            "variant": 2
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ssmc:tile",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{BlockStateTag: {variant: \"rglass\"}}"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ssmc:tile",
+          "properties": {
+            "variant": 3
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "honk": {
+    "subtitle": "sound.ssmc.honk",
+    "sounds": ["ssmc:bikehorn"]
+  },
+  "crowbar": {
+    "subtitle": "sound.ssmc.crowbar",
+    "sounds": ["ssmc:crowbar"]
+  },
+  "wrench": {
+    "subtitle": "sound.ssmc.wrench",
+    "sounds": ["ssmc:ratchet"]
+  },
+  "genhit": {
+    "subtitle": "sound.ssmc.genhit",
+    "sounds": ["ssmc:genhit"]
+  }
+}

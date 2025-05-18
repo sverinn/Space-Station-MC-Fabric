@@ -1,0 +1,8 @@
+{
+  "overrides": [
+    { "predicate": { "ssmc:variant": 0 }, "model": "ssmc:item/tile/dark" },
+    { "predicate": { "ssmc:variant": 1 }, "model": "ssmc:item/tile/white" },
+    { "predicate": { "ssmc:variant": 2 }, "model": "ssmc:item/tile/glass" },
+    { "predicate": { "ssmc:variant": 3 }, "model": "ssmc:item/tile/rglass" }
+  ]
+}
