@@ -9,6 +9,10 @@ import net.minecraft.item.ItemGroups;
 import static com.sverinn.ssmc.object.item.SsmcItems.*;
 import static com.sverinn.ssmc.object.item.SsmcItems.CROWBAR;
 
+/**
+ * Initialize item categories: General, Tools, Structures, Fun
+ * And add items to categories
+ */
 public class SsmcItemGroupRegistries {
     public static void initialize()
     {
@@ -46,9 +50,5 @@ public class SsmcItemGroupRegistries {
                 entries.add(SsmcTileBlock.createStackWithVariant(variant));
             }
         });
-
-        //ItemGroupEvents.modifyEntriesEvent(SSMC_STRUCTURES_ITEM_GROUP_KEY).register((itemGroup) -> {
-        //    itemGroup.add(SsmcBlocks.TILE.asItem());
-        //});
     }
 }

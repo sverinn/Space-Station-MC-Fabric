@@ -24,6 +24,12 @@ import static com.sverinn.ssmc.util.Util.playSoundAndSetBlock;
 import static com.sverinn.ssmc.util.Util.randomFloatBetween;
 import static net.minecraft.block.Blocks.AIR;
 
+/**
+ * Handle all rightclicks on blocks, with or without items.
+ * TypedActionResult.success = run custom logic only.
+ * TypedActionResult.pass = run custom then vanilla logic.
+ * TypedActionResult.fail = cancel action.
+ */
 public class BlockInteractionHandler {
     public static TypedActionResult<ItemStack> handleBlockInteractions(PlayerEntity player, World world, Hand hand,
                                                                        BlockHitResult blockHit, BlockState state, Item heldItem) {

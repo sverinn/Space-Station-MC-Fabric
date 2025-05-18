@@ -22,6 +22,11 @@ import net.minecraft.world.WorldAccess;
 import static com.sverinn.ssmc.handlers.BlockInteractionHandler.handleBlockInteractions;
 import static com.sverinn.ssmc.object.block.SsmcBlocks.TILE;
 
+
+/**
+ * TILE Block class with multiple blockstate. Each blockstate has its own custom drop and model.
+ * What is common across blockstates of this block: Tool interaction logic, model geometry.
+ */
 public class SsmcTileBlock extends Block {
     public static final EnumProperty<TileVariant> TILE_VARIANT = EnumProperty.of("variant", TileVariant.class);
 
@@ -46,18 +51,6 @@ public class SsmcTileBlock extends Block {
         builder.add(TILE_VARIANT); // Добавляем наше свойство в блок
     }
 
-    //@Override
-    //public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-    //    // Проверяем, что действие происходит на сервере (чтобы избежать двойного срабатывания)
-    //    if (world.isClient) {
-    //        return ActionResult.SUCCESS; // Клиентская часть просто подтверждает действие
-    //    }
-//
-//
-    //    return handleBlockInteractions(player, world, hand, hit, state, player.getMainHandStack());
-//
-    //    // Ваш кастомный код (например, открытие GUI, спавн сущности и т. д.)
-    //}
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {

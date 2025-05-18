@@ -13,13 +13,20 @@ import com.sverinn.ssmc.effects.SsmcEffects;
 
 public class Ssmc implements ModInitializer {
 
+    /**
+     * Register mod id to reuse across the project using Ssmc.MOD_ID
+     * And Logger using Ssmc.LOGGER
+     * E.g. Ssmc.LOGGER.info("Sample text");
+     */
     public static final String MOD_ID = "ssmc";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+    /**
+     *Register mod classes. Runs once on startup.
+     */
     @Override
     public void onInitialize() {
         LOGGER.info("Starting SSMC.");
-        // Register stuff.
         SsmcSounds.initialize();
         SsmcEffects.initialize();
         SsmcItems.initialize();

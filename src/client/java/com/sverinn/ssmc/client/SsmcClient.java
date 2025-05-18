@@ -16,6 +16,8 @@ public class SsmcClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
+        // Make it so the texture is different for each TILE BlockState
         ModelPredicateProviderRegistry.register(
                 new Identifier("ssmc", "variant"),
                 (stack, world, entity, seed) -> {
@@ -27,8 +29,9 @@ public class SsmcClient implements ClientModInitializer {
                     return 0; // Default variant (dark)
                 }
         );
-
+        // Make the texture cutout like grass or leaves
         BlockRenderLayerMap.INSTANCE.putBlock(LATTICE, RenderLayer.getCutout());
+        // Make the texture translucent like glass
         BlockRenderLayerMap.INSTANCE.putBlock(TILE, RenderLayer.getTranslucent());
     }
 }

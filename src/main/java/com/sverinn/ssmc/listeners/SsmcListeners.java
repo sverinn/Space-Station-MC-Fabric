@@ -2,6 +2,9 @@ package com.sverinn.ssmc.listeners;
 
 import com.sverinn.ssmc.Ssmc;
 
+/**
+ * Initialize all listeners
+ */
 public class SsmcListeners {
     public static void initialize()
     {

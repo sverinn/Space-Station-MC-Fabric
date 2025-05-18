@@ -13,7 +13,14 @@ import net.minecraft.util.Identifier;
 import com.sverinn.ssmc.Ssmc;
 import com.sverinn.ssmc.effects.SsmcEffects;
 
-
+/**
+ * Very bloated, needs refactoring
+ * What this does:
+ *  Creates item registry;
+ *  Registers Item Groups;
+ *  Registers Items.
+ *  Don't forget to update assets/models/item, assets/textures/item
+ */
 public class SsmcItems {
 
     public static Item register(Item item, String id) {

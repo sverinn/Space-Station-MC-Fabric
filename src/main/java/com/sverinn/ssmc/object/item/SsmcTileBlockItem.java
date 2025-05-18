@@ -9,6 +9,9 @@ import net.minecraft.util.ActionResult;
 
 import static com.sverinn.ssmc.handlers.BlockPlacementHandler.handleBlockPlacement;
 
+/**
+ * Overrides for TILE BlockItem (currently overrides right click with block).
+ */
 public class SsmcTileBlockItem extends BlockItem {
 
     public SsmcTileBlockItem(Block block, Settings settings) {

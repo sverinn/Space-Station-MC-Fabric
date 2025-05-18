@@ -16,6 +16,12 @@ import static com.sverinn.ssmc.object.block.SsmcBlocks.*;
 import static com.sverinn.ssmc.object.block.SsmcTileBlock.TILE_VARIANT;
 import static com.sverinn.ssmc.util.Util.playSoundAndSetBlock;
 
+/**
+ * All logic for Right Clicks with blocks is here.
+ * SUCCESS = do not perform vanilla action processing.
+ * PASS = run custom code then vanilla code after it.
+ * FAIL = cancel action.
+ */
 public class BlockPlacementHandler {
     public static ActionResult handleBlockPlacement(ItemPlacementContext context) {
 

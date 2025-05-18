@@ -8,15 +8,20 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 
+/**
+ * Register sounds.
+ * Don't forget to update assets/sounds.json
+ */
 public class SsmcSounds {
+
+
     private SsmcSounds() {
         // private empty constructor to avoid accidental instantiation
     }
-
     // ITEM_METAL_WHISTLE is the name of the custom sound event
     // and is called in the mod to use the custom sound
-    public static final SoundEvent HONK_SOUND = registerSound("honk");
-    public static final SoundEvent CROWBAR = registerSound("crowbar");
+    public static final SoundEvent HONK_SOUND = registerSound("honk"); // Honk sound
+    public static final SoundEvent CROWBAR = registerSound("crowbar"); // Crowbar sound
     public static final SoundEvent WRENCH = registerSound("wrench");
     public static final SoundEvent GENHIT = registerSound("genhit");
     public static final SoundEvent CUTTERS = registerSound("wirecutter");

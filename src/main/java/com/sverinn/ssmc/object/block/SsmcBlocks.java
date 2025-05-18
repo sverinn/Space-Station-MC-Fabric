@@ -14,33 +14,66 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
+/**
+ * Initialize registries and add custom blocks.
+ * Don't forget to update assets/models/block, assets/models/item, assets/textures/block, assets/textures/item
+ */
 public class SsmcBlocks {
 
+    /**
+     * Register a generic block with BlockItem (like stone).
+     * @param name
+     * @param block
+     * @return
+     */
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(Ssmc.MOD_ID, name), block);
     }
 
-
-    private static Block registerCustomBlock(String name, Block block) {
-        registerCustomBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(Ssmc.MOD_ID, name), block);
-    }
-
+    /**
+     * Register a generic BlockItem (like stone).
+     * @param name
+     * @param block
+     * @return
+     */
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(Ssmc.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
     }
 
+    /**
+     * Usually used for blocks that are not obtainable (like Air, Portal).
+     * @param name
+     * @param block
+     * @return
+     */
+    private static Block registerBlockWithoutBlockItem(String name, Block block) {
+        return Registry.register(Registries.BLOCK, new Identifier(Ssmc.MOD_ID, name), block);
+    }
 
-    private static Item registerCustomBlockItem(String name, Block block) {
+    /**
+     * Custom registration for SsmcTileBlock
+     * @param name
+     * @param block
+     * @return
+     */
+    private static Block registerTileBlock(String name, Block block) {
+        registerTileBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, new Identifier(Ssmc.MOD_ID, name), block);
+    }
+
+    /**
+     * Custom registration for SsmcTileBlock
+     * @param name
+     * @param block
+     * @return
+     */
+    private static Item registerTileBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(Ssmc.MOD_ID, name),
                 new SsmcTileBlockItem(block, new FabricItemSettings()));
     }
 
-    private static Block registerBlockWithoutBlockItem(String name, Block block) {
-        return Registry.register(Registries.BLOCK, new Identifier(Ssmc.MOD_ID, name), block);
-    }
 
     public static final  Block PLATING = registerBlock(
             "plating",
@@ -53,13 +86,12 @@ public class SsmcBlocks {
     );
 
     public static final Block TILE =
-            registerCustomBlock("tile",
+            registerTileBlock("tile",
             new SsmcTileBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque().drops(new Identifier("ssmc","tile")))
     );
 
     public static void initialize()
     {
         Ssmc.LOGGER.info("Registering " + Ssmc.MOD_ID + " Blocks");
-
     }
 }

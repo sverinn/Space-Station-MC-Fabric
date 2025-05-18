@@ -11,7 +11,9 @@ import net.minecraft.util.hit.HitResult;
 import static com.sverinn.ssmc.audio.SsmcSounds.GENHIT;
 import static com.sverinn.ssmc.handlers.BlockInteractionHandler.handleBlockInteractions;
 import static com.sverinn.ssmc.object.block.SsmcBlocks.*;
-
+/**
+ * General logic for UseItemCallback. Does not require external call.
+ */
 public class UseBlockListeners {
     public static void initialize() {
         UseItemCallback.EVENT.register((player, world, hand) -> {

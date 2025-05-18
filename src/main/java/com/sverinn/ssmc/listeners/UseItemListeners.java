@@ -22,6 +22,9 @@ import static com.sverinn.ssmc.object.block.SsmcBlocks.*;
 import static com.sverinn.ssmc.object.item.SsmcItems.*;
 import static com.sverinn.ssmc.util.Util.randomFloatBetween;
 
+/**
+ * General logic for UseItemCallback. Does not require external call.
+ */
 public class UseItemListeners {
     public static void initialize() {
         UseItemCallback.EVENT.register((player, world, hand) -> {

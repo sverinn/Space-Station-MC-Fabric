@@ -9,6 +9,9 @@ import java.util.Random;
 
 import static com.sverinn.ssmc.audio.SsmcSounds.HONK_SOUND;
 
+/**
+ * Honk honk
+ */
 public class HonkEffect extends StatusEffect {
     protected HonkEffect() {
         // category: StatusEffectCategory - describes if the effect is helpful (BENEFICIAL), harmful (HARMFUL) or useless (NEUTRAL)
