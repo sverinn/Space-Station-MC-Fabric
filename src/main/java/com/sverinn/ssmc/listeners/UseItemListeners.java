@@ -1,26 +1,13 @@
 package com.sverinn.ssmc.listeners;
 
-import com.sverinn.ssmc.audio.SsmcSounds;
-import com.sverinn.ssmc.enums.TileVariant;
-import com.sverinn.ssmc.object.block.SsmcTileBlock;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
-import net.minecraft.world.World;
 
-import static com.sverinn.ssmc.audio.SsmcSounds.GENHIT;
-import static com.sverinn.ssmc.enums.TileVariant.DARK;
-import static com.sverinn.ssmc.enums.TileVariant.WHITE;
 import static com.sverinn.ssmc.handlers.BlockInteractionHandler.handleBlockInteractions;
-import static com.sverinn.ssmc.object.block.SsmcBlocks.*;
-import static com.sverinn.ssmc.object.item.SsmcItems.*;
-import static com.sverinn.ssmc.util.Util.randomFloatBetween;
 
 /**
  * General logic for UseItemCallback. Does not require external call.

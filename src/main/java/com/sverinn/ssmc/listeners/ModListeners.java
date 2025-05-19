@@ -5,7 +5,7 @@ import com.sverinn.ssmc.Ssmc;
 /**
  * Initialize all listeners
  */
-public class SsmcListeners {
+public class ModListeners {
     public static void initialize()
     {
         UseItemListeners.initialize();

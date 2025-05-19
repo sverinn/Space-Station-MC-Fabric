@@ -1,42 +1,34 @@
 package com.sverinn.ssmc.object.block;
 
-import com.sverinn.ssmc.enums.TileVariant;
+import com.sverinn.ssmc.enums.TileBlockVariant;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
 
-import static com.sverinn.ssmc.handlers.BlockInteractionHandler.handleBlockInteractions;
-import static com.sverinn.ssmc.object.block.SsmcBlocks.TILE;
+import static com.sverinn.ssmc.object.block.ModBlocks.TILE;
 
 
 /**
  * TILE Block class with multiple blockstate. Each blockstate has its own custom drop and model.
  * What is common across blockstates of this block: Tool interaction logic, model geometry.
  */
-public class SsmcTileBlock extends Block {
-    public static final EnumProperty<TileVariant> TILE_VARIANT = EnumProperty.of("variant", TileVariant.class);
+public class TileBlock extends Block {
+    public static final EnumProperty<TileBlockVariant> TILE_VARIANT = EnumProperty.of("variant", TileBlockVariant.class);
 
-    public SsmcTileBlock(Settings settings) {
+    public TileBlock(Settings settings) {
         super(settings);
         // Устанавливаем состояние по умолчанию
-        this.setDefaultState(this.getStateManager().getDefaultState().with(TILE_VARIANT, TileVariant.DARK));
+        this.setDefaultState(this.getStateManager().getDefaultState().with(TILE_VARIANT, TileBlockVariant.DARK));
     }
 
-    public static ItemStack createStackWithVariant(TileVariant variant) {
+    public static ItemStack createStackWithVariant(TileBlockVariant variant) {
         ItemStack stack = new ItemStack(TILE); // Замените на ваш блок
         NbtCompound nbt = new NbtCompound();
         NbtCompound stateTag = new NbtCompound();

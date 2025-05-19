@@ -1,24 +1,22 @@
 package com.sverinn.ssmc.object.block;
 
 import com.sverinn.ssmc.Ssmc;
-import com.sverinn.ssmc.object.item.SsmcTileBlockItem;
+import com.sverinn.ssmc.object.item.TileBlockItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 /**
  * Initialize registries and add custom blocks.
  * Don't forget to update assets/models/block, assets/models/item, assets/textures/block, assets/textures/item
  */
-public class SsmcBlocks {
+public class ModBlocks {
 
     /**
      * Register a generic block with BlockItem (like stone).
@@ -53,7 +51,7 @@ public class SsmcBlocks {
     }
 
     /**
-     * Custom registration for SsmcTileBlock
+     * Custom registration for TileBlock
      * @param name
      * @param block
      * @return
@@ -64,14 +62,14 @@ public class SsmcBlocks {
     }
 
     /**
-     * Custom registration for SsmcTileBlock
+     * Custom registration for TileBlock
      * @param name
      * @param block
      * @return
      */
     private static Item registerTileBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(Ssmc.MOD_ID, name),
-                new SsmcTileBlockItem(block, new FabricItemSettings()));
+                new TileBlockItem(block, new FabricItemSettings()));
     }
 
 
@@ -87,7 +85,7 @@ public class SsmcBlocks {
 
     public static final Block TILE =
             registerTileBlock("tile",
-            new SsmcTileBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque().drops(new Identifier("ssmc","tile")))
+            new TileBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque().drops(new Identifier("ssmc","tile")))
     );
 
     public static void initialize()

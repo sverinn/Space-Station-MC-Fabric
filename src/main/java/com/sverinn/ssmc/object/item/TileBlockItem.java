@@ -1,10 +1,8 @@
 package com.sverinn.ssmc.object.item;
 
 import net.minecraft.block.Block;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 
 import static com.sverinn.ssmc.handlers.BlockPlacementHandler.handleBlockPlacement;
@@ -12,9 +10,9 @@ import static com.sverinn.ssmc.handlers.BlockPlacementHandler.handleBlockPlaceme
 /**
  * Overrides for TILE BlockItem (currently overrides right click with block).
  */
-public class SsmcTileBlockItem extends BlockItem {
+public class TileBlockItem extends BlockItem {
 
-    public SsmcTileBlockItem(Block block, Settings settings) {
+    public TileBlockItem(Block block, Settings settings) {
         super(block, settings);
     }
 

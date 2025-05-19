@@ -1,14 +1,14 @@
 package com.sverinn.ssmc;
 
-import com.sverinn.ssmc.audio.SsmcSounds;
-import com.sverinn.ssmc.listeners.SsmcListeners;
-import com.sverinn.ssmc.object.block.SsmcBlocks;
-import com.sverinn.ssmc.object.item.SsmcItems;
-import com.sverinn.ssmc.registries.SsmcItemGroupRegistries;
+import com.sverinn.ssmc.audio.ModSoundEvents;
+import com.sverinn.ssmc.listeners.ModListeners;
+import com.sverinn.ssmc.object.block.ModBlocks;
+import com.sverinn.ssmc.object.item.ModItems;
+import com.sverinn.ssmc.registries.ModItemGroupRegistries;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.sverinn.ssmc.effects.SsmcEffects;
+import com.sverinn.ssmc.effects.ModStatusEffects;
 
 
 public class Ssmc implements ModInitializer {
@@ -27,12 +27,12 @@ public class Ssmc implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("Starting SSMC.");
-        SsmcSounds.initialize();
-        SsmcEffects.initialize();
-        SsmcItems.initialize();
-        SsmcBlocks.initialize();
-        SsmcItemGroupRegistries.initialize();
-        SsmcListeners.initialize();
+        ModSoundEvents.initialize();
+        ModStatusEffects.initialize();
+        ModItems.initialize();
+        ModBlocks.initialize();
+        ModItemGroupRegistries.initialize();
+        ModListeners.initialize();
 
 
     }

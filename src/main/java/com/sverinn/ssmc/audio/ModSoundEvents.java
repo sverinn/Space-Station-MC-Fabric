@@ -1,7 +1,6 @@
 package com.sverinn.ssmc.audio;
 
 import com.sverinn.ssmc.Ssmc;
-import net.fabricmc.api.ModInitializer;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
@@ -12,10 +11,10 @@ import net.minecraft.util.Identifier;
  * Register sounds.
  * Don't forget to update assets/sounds.json
  */
-public class SsmcSounds {
+public class ModSoundEvents {
 
 
-    private SsmcSounds() {
+    private ModSoundEvents() {
         // private empty constructor to avoid accidental instantiation
     }
     // ITEM_METAL_WHISTLE is the name of the custom sound event

@@ -6,7 +6,7 @@ import net.minecraft.util.StringIdentifiable;
  * BlockStates for TILE block.
  * DARK = 0
  */
-public enum TileVariant implements StringIdentifiable {
+public enum TileBlockVariant implements StringIdentifiable {
     DARK("dark"),
     WHITE("white"),
     GLASS("glass"),
@@ -23,7 +23,7 @@ public enum TileVariant implements StringIdentifiable {
      * Try with .toUpperCase()
      * @param name
      */
-    TileVariant(String name) {
+    TileBlockVariant(String name) {
         this.name = name;
     }
 

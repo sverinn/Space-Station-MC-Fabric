@@ -3,14 +3,12 @@ package com.sverinn.ssmc.listeners;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 
-import static com.sverinn.ssmc.audio.SsmcSounds.GENHIT;
 import static com.sverinn.ssmc.handlers.BlockInteractionHandler.handleBlockInteractions;
-import static com.sverinn.ssmc.object.block.SsmcBlocks.*;
+
 /**
  * General logic for UseItemCallback. Does not require external call.
  */

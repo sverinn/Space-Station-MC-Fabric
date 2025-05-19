@@ -1,19 +1,18 @@
 package com.sverinn.ssmc.registries;
 
-import com.sverinn.ssmc.enums.TileVariant;
-import com.sverinn.ssmc.object.block.SsmcBlocks;
-import com.sverinn.ssmc.object.block.SsmcTileBlock;
+import com.sverinn.ssmc.enums.TileBlockVariant;
+import com.sverinn.ssmc.object.block.ModBlocks;
+import com.sverinn.ssmc.object.block.TileBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.ItemGroups;
 
-import static com.sverinn.ssmc.object.item.SsmcItems.*;
-import static com.sverinn.ssmc.object.item.SsmcItems.CROWBAR;
+import static com.sverinn.ssmc.object.item.ModItems.*;
+import static com.sverinn.ssmc.object.item.ModItems.CROWBAR;
 
 /**
  * Initialize item categories: General, Tools, Structures, Fun
  * And add items to categories
  */
-public class SsmcItemGroupRegistries {
+public class ModItemGroupRegistries {
     public static void initialize()
     {
         ItemGroupEvents.modifyEntriesEvent(SSMC_FUN_ITEM_GROUP_KEY).register(itemGroup -> {
@@ -42,12 +41,12 @@ public class SsmcItemGroupRegistries {
         });
 
         ItemGroupEvents.modifyEntriesEvent(SSMC_STRUCTURES_ITEM_GROUP_KEY).register((itemGroup) -> {
-            itemGroup.add(SsmcBlocks.PLATING.asItem());
+            itemGroup.add(ModBlocks.PLATING.asItem());
         });
 
         ItemGroupEvents.modifyEntriesEvent(SSMC_STRUCTURES_ITEM_GROUP_KEY).register(entries -> {
-            for (TileVariant variant : TileVariant.values()) {
-                entries.add(SsmcTileBlock.createStackWithVariant(variant));
+            for (TileBlockVariant variant : TileBlockVariant.values()) {
+                entries.add(TileBlock.createStackWithVariant(variant));
             }
         });
     }

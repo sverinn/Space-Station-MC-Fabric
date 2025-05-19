@@ -7,13 +7,13 @@ import net.minecraft.sound.SoundCategory;
 
 import java.util.Random;
 
-import static com.sverinn.ssmc.audio.SsmcSounds.HONK_SOUND;
+import static com.sverinn.ssmc.audio.ModSoundEvents.HONK_SOUND;
 
 /**
  * Honk honk
  */
-public class HonkEffect extends StatusEffect {
-    protected HonkEffect() {
+public class HonkStatusEffect extends StatusEffect {
+    protected HonkStatusEffect() {
         // category: StatusEffectCategory - describes if the effect is helpful (BENEFICIAL), harmful (HARMFUL) or useless (NEUTRAL)
         // color: int - Color is the color assigned to the effect (in RGB)
         super(StatusEffectCategory.NEUTRAL, 0xe9b8b3);

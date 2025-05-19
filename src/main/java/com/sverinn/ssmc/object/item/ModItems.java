@@ -1,6 +1,5 @@
 package com.sverinn.ssmc.object.item;
 
-import com.sverinn.ssmc.object.block.SsmcBlocks;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -11,7 +10,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import com.sverinn.ssmc.Ssmc;
-import com.sverinn.ssmc.effects.SsmcEffects;
+import com.sverinn.ssmc.effects.ModStatusEffects;
 
 /**
  * Very bloated, needs refactoring
@@ -21,7 +20,7 @@ import com.sverinn.ssmc.effects.SsmcEffects;
  *  Registers Items.
  *  Don't forget to update assets/models/item, assets/textures/item
  */
-public class SsmcItems {
+public class ModItems {
 
     public static Item register(Item item, String id) {
         // Create the identifier for the item.
@@ -36,26 +35,26 @@ public class SsmcItems {
 
     public static final RegistryKey<ItemGroup> SSMC_FUN_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(Ssmc.MOD_ID, "fun"));
     public static final ItemGroup SSMC_FUN_ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(SsmcItems.BANANIUM))
+            .icon(() -> new ItemStack(ModItems.BANANIUM))
             .displayName(Text.translatable("fun.ssmc"))
             .build();
 
 
     public static final RegistryKey<ItemGroup> SSMC_STRUCTURES_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(Ssmc.MOD_ID, "structures"));
     public static final ItemGroup SSMC_STRUCTURES_ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(SsmcItems.RODS))
+            .icon(() -> new ItemStack(ModItems.RODS))
             .displayName(Text.translatable("structures.ssmc"))
             .build();
 
     public static final RegistryKey<ItemGroup> SSMC_TOOLS_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(Ssmc.MOD_ID, "tools"));
     public static final ItemGroup SSMC_TOOLS_ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(SsmcItems.CROWBAR))
+            .icon(() -> new ItemStack(ModItems.CROWBAR))
             .displayName(Text.translatable("tools.ssmc"))
             .build();
 
     public static final RegistryKey<ItemGroup> SSMC_GENERAL_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(Ssmc.MOD_ID, "general"));
     public static final ItemGroup SSMC_GENERAL_ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(SsmcItems.CROWBAR))
+            .icon(() -> new ItemStack(ModItems.CROWBAR))
             .displayName(Text.translatable("general.ssmc"))
             .build();
 
@@ -63,7 +62,7 @@ public class SsmcItems {
             .alwaysEdible()
             .snack()
             // The duration is in ticks, 20 ticks = 1 second
-            .statusEffect(new StatusEffectInstance(SsmcEffects.HONK_EFFECT, 6 * 20, 1), 1.0f)
+            .statusEffect(new StatusEffectInstance(ModStatusEffects.HONK_EFFECT, 6 * 20, 1), 1.0f)
             .build();
 
 
