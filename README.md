@@ -27,11 +27,13 @@ Go to the project directory
 
 Build with Gradle
 
-```linux
+Linux
+```
   gradlew build
 ```
 
-```windows
+Windows
+```
   .\gradlew.bat build
 ```
 
