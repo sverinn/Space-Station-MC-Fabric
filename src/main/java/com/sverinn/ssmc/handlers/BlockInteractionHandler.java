@@ -2,15 +2,19 @@ package com.sverinn.ssmc.handlers;
 
 import com.sverinn.ssmc.audio.ModSoundEvents;
 import com.sverinn.ssmc.enums.TileBlockVariant;
+import com.sverinn.ssmc.object.block.TileBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import static com.sverinn.ssmc.audio.ModSoundEvents.GENHIT;
@@ -30,27 +34,35 @@ import static net.minecraft.block.Blocks.AIR;
 public class BlockInteractionHandler {
     public static TypedActionResult<ItemStack> handleBlockInteractions(PlayerEntity player, World world, Hand hand,
                                                                        BlockHitResult blockHit, BlockState state, Item heldItem) {
-        if (state.getBlock() == LATTICE && heldItem == CUTTERS) {
-            playSoundAndSetBlock(world, blockHit.getBlockPos(), ModSoundEvents.CUTTERS, AIR.getDefaultState());
-            player.swingHand(hand);
-            ItemStack itemStack = new ItemStack(RODS, 2);
-            ItemScatterer.spawn(world, blockHit.getBlockPos().getX(), blockHit.getBlockPos().getY(), blockHit.getBlockPos().getZ(), itemStack);
-            return TypedActionResult.success(heldItem.getDefaultStack());
+        if (state.getBlock() == LATTICE) {
+            switch (heldItem.toString()) {
+                case "cutters": {
+                    playSoundAndSetBlock(world, blockHit.getBlockPos(), ModSoundEvents.CUTTERS, AIR.getDefaultState());
+                    player.swingHand(hand);
+                    return TypedActionResult.success(heldItem.getDefaultStack());
+                }
+                case "sheet/steel": {
+                    playSoundAndSetBlock(world, blockHit.getBlockPos(), ModSoundEvents.GENHIT, PLATING.getDefaultState(), false);
+                    player.swingHand(hand);
+                    return TypedActionResult.success(heldItem.getDefaultStack());
+                }
+            }
         } else
         if (state.getBlock() == TILE && heldItem == CROWBAR) {
             playSoundAndSetBlock(world, blockHit.getBlockPos(), ModSoundEvents.CROWBAR, PLATING.getDefaultState());
+
             player.swingHand(hand);
             return TypedActionResult.success(heldItem.getDefaultStack());
-        } else if (heldItem == RODS && new ItemPlacementContext(player, hand, heldItem.getDefaultStack(), blockHit).canPlace()) {
+        } else if (heldItem == PART_ROD_METAL && new ItemPlacementContext(player, hand, heldItem.getDefaultStack(), blockHit).canPlace()) {
             playSoundAndSetBlock(world, blockHit.getBlockPos().offset(blockHit.getSide()), GENHIT, LATTICE.getDefaultState());
             player.swingHand(hand);
             return TypedActionResult.success(heldItem.getDefaultStack());
         } else if (state.getBlock() == PLATING && heldItem == SHEET_GLASS) {
-            playSoundAndSetBlock(world, blockHit.getBlockPos(), GENHIT, TILE.getDefaultState().with(TILE_VARIANT, TileBlockVariant.GLASS));
+            playSoundAndSetBlock(world, blockHit.getBlockPos(), GENHIT, TILE.getDefaultState().with(TILE_VARIANT, TileBlockVariant.GLASS), false);
             player.swingHand(hand);
             return TypedActionResult.success(heldItem.getDefaultStack());
         } else if (state.getBlock() == PLATING && heldItem == SHEET_RGLASS) {
-            playSoundAndSetBlock(world, blockHit.getBlockPos(), GENHIT, TILE.getDefaultState().with(TILE_VARIANT, TileBlockVariant.RGLASS));
+            playSoundAndSetBlock(world, blockHit.getBlockPos(), GENHIT, TILE.getDefaultState().with(TILE_VARIANT, TileBlockVariant.RGLASS), false);
             player.swingHand(hand);
             return TypedActionResult.success(heldItem.getDefaultStack());
         }

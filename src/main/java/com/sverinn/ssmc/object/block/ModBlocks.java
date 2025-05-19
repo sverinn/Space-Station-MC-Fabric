@@ -85,7 +85,7 @@ public class ModBlocks {
 
     public static final Block TILE =
             registerTileBlock("tile",
-            new TileBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque().drops(new Identifier("ssmc","tile")))
+            new TileBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque())
     );
 
     public static void initialize()

@@ -40,4 +40,20 @@ public class Util {
         world.playSound(null, blockPos, sound, MASTER, 1f, randomFloatBetween(0.9f, 1.1f));
         world.setBlockState(blockPos, newState);
     }
+
+    /**
+     * Break block at blockpos, play sound @blockPos, set block to newState @world @blockPost
+     * @param world
+     * @param blockPos
+     * @param sound
+     * @param newState
+     */
+    public static void playSoundAndSetBlock(World world,
+                                            BlockPos blockPos, SoundEvent sound, BlockState newState, boolean drop) {
+        if (world.isClient)
+        {return;}
+        world.breakBlock(blockPos, drop);
+        world.playSound(null, blockPos, sound, MASTER, 1f, randomFloatBetween(0.9f, 1.1f));
+        world.setBlockState(blockPos, newState);
+    }
 }

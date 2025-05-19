@@ -1,22 +1,22 @@
 {
-  "honk": {
-    "subtitle": "sound.ssmc.honk",
-    "sounds": ["ssmc:bikehorn"]
+  "bikehorn": {
+    "subtitle": "sound.ssmc.items.bikehorn",
+    "sounds": ["ssmc:items/bikehorn"]
   },
   "crowbar": {
-    "subtitle": "sound.ssmc.crowbar",
-    "sounds": ["ssmc:crowbar"]
+    "subtitle": "sound.ssmc.items.crowbar",
+    "sounds": ["ssmc:items/crowbar"]
   },
   "wrench": {
-    "subtitle": "sound.ssmc.wrench",
-    "sounds": ["ssmc:ratchet"]
+    "subtitle": "sound.ssmc.items.wrench",
+    "sounds": ["ssmc:items/ratchet"]
   },
   "genhit": {
-    "subtitle": "sound.ssmc.genhit",
-    "sounds": ["ssmc:genhit"]
+    "subtitle": "sound.ssmc.items.genhit",
+    "sounds": ["ssmc:items/genhit"]
   },
   "wirecutter": {
-    "subtitle": "sound.ssmc.wirecutter",
-    "sounds": ["ssmc:wirecutter"]
+    "subtitle": "sound.ssmc.items.wirecutter",
+    "sounds": ["ssmc:items/wirecutter"]
   }
 }

@@ -33,6 +33,7 @@ public class ModItems {
         return registeredItem;
     }
 
+
     public static final RegistryKey<ItemGroup> SSMC_FUN_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(Ssmc.MOD_ID, "fun"));
     public static final ItemGroup SSMC_FUN_ITEM_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(ModItems.BANANIUM))
@@ -42,7 +43,7 @@ public class ModItems {
 
     public static final RegistryKey<ItemGroup> SSMC_STRUCTURES_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(Ssmc.MOD_ID, "structures"));
     public static final ItemGroup SSMC_STRUCTURES_ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(ModItems.RODS))
+            .icon(() -> new ItemStack(ModItems.PART_ROD_METAL))
             .displayName(Text.translatable("structures.ssmc"))
             .build();
 
@@ -106,10 +107,10 @@ public class ModItems {
             "sheet/rglass"
     );
 
-    public static final Item RODS = register(
+    public static final Item PART_ROD_METAL = register(
             // Ignore the food component for now, we'll cover it later in the food section.
             new Item(new FabricItemSettings().maxCount(30)),
-            "rods"
+            "objects/materials/parts.rsi/partrodmetal"
     );
 
 

@@ -8,6 +8,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 
 import static com.sverinn.ssmc.audio.ModSoundEvents.GENHIT;
+import static com.sverinn.ssmc.enums.TileBlockVariant.GLASS;
 import static com.sverinn.ssmc.object.block.ModBlocks.*;
 import static com.sverinn.ssmc.object.block.TileBlock.TILE_VARIANT;
 import static com.sverinn.ssmc.util.Util.playSoundAndSetBlock;
@@ -26,12 +27,13 @@ public class BlockPlacementHandler {
         ItemStack heldStack = context.getStack();
         if ( targetBlock == PLATING && heldStack.getItem() == TILE.asItem()) {
 
-            playSoundAndSetBlock(context.getWorld(), targetBlockPos, GENHIT, TILE.getDefaultState().with(TILE_VARIANT, TileBlockVariant.valueOf(heldStack.getNbt().getCompound("BlockStateTag").getString("variant").toUpperCase())));
+            playSoundAndSetBlock(context.getWorld(), targetBlockPos, GENHIT, TILE.getDefaultState().with(TILE_VARIANT, TileBlockVariant.valueOf(heldStack.getNbt().getCompound("BlockStateTag").getString("variant").toUpperCase())), false);
             heldStack.decrement(1);
             return ActionResult.SUCCESS;
         }else if ( targetBlock == LATTICE && heldStack.getItem() == TILE.asItem()) {
-
-            playSoundAndSetBlock(context.getWorld(), targetBlockPos, GENHIT, PLATING.getDefaultState());
+            if (heldStack.getNbt().getCompound("BlockStateTag").getString("variant").toUpperCase() == "GLASS" || heldStack.getNbt().getCompound("BlockStateTag").getString("variant").toUpperCase() == "GLASS")
+                return ActionResult.FAIL;
+            playSoundAndSetBlock(context.getWorld(), targetBlockPos, GENHIT, PLATING.getDefaultState(), false);
             heldStack.decrement(1);
             return ActionResult.SUCCESS;
         }

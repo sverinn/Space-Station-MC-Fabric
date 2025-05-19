@@ -30,4 +30,8 @@ public enum TileBlockVariant implements StringIdentifiable {
     public String getName() {
         return name;
     }
+
+    public void append(Object object)
+    {
+    }
 }

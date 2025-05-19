@@ -8,11 +8,15 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.ItemScatterer;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
+import static com.sverinn.ssmc.enums.TileBlockVariant.DARK;
 import static com.sverinn.ssmc.object.block.ModBlocks.TILE;
+import static com.sverinn.ssmc.object.item.ModItems.SHEET_GLASS;
+import static com.sverinn.ssmc.object.item.ModItems.SHEET_RGLASS;
 
 
 /**
@@ -25,7 +29,7 @@ public class TileBlock extends Block {
     public TileBlock(Settings settings) {
         super(settings);
         // Устанавливаем состояние по умолчанию
-        this.setDefaultState(this.getStateManager().getDefaultState().with(TILE_VARIANT, TileBlockVariant.DARK));
+        this.setDefaultState(this.getStateManager().getDefaultState().with(TILE_VARIANT, DARK));
     }
 
     public static ItemStack createStackWithVariant(TileBlockVariant variant) {
@@ -44,34 +48,50 @@ public class TileBlock extends Block {
     }
 
 
-    @Override
-    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        // Проверяем что блок действительно заменяется (а не просто обновляется)
-        if (!state.isOf(newState.getBlock())) {
-            if (!world.isClient()) {
-                // Получаем вариант блока (с защитой от null)
-                String variant = state.get(TILE_VARIANT).asString();
-
-                // Создаем предмет
-                ItemStack itemStack = new ItemStack(TILE);
-
-                // Устанавливаем NBT только если вариант не дефолтный
-                NbtCompound tag = new NbtCompound();
-                NbtCompound blockStateTag = new NbtCompound();
-                blockStateTag.putString("variant", variant.toUpperCase());
-                tag.put("BlockStateTag", blockStateTag);
-                itemStack.setNbt(tag);
-
-                float y = pos.getY()+0.7f;
-
-                // Дропаем с небольшим случайным смещением
-                ItemScatterer.spawn(world, pos.getX(), y, pos.getZ(), itemStack);
-            }
-        }
-
-        //noinspection deprecation
-        super.onStateReplaced(state, world, pos, newState, moved);
-    }
+    //@Override
+    //public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+    //    // Проверяем что блок действительно заменяется (а не просто обновляется)
+    //    if (!state.isOf(newState.getBlock())) {
+    //        if (!world.isClient()) {
+    //            this.handleDrops(state, world, pos, newState, moved);
+    //        }
+    //    }
+//
+    //    //noinspection deprecation
+    //    super.onStateReplaced(state, world, pos, newState, moved);
+    //}
+//
+    //public void handleDrops(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+    //    if (!world.isClient()) {
+    //        // Получаем вариант блока (с защитой от null)
+    //        String variant = state.get(TILE_VARIANT).asString();
+//
+    //        switch (variant) {
+    //            case "glass": {
+    //                ItemStack itemStack = new ItemStack(SHEET_GLASS);
+    //                ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
+    //                return;
+    //            }
+    //            case "rglass": {
+    //                ItemStack itemStack = new ItemStack(SHEET_RGLASS);
+    //                ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
+    //                return;
+    //            }
+    //        }
+//
+    //        // Создаем предмет
+    //        ItemStack itemStack = new ItemStack(TILE);
+    //        // Устанавливаем NBT только если вариант не дефолтный
+    //        NbtCompound tag = new NbtCompound();
+    //        NbtCompound blockStateTag = new NbtCompound();
+    //        blockStateTag.putString("variant", variant.toUpperCase());
+    //        tag.put("BlockStateTag", blockStateTag);
+    //        itemStack.setNbt(tag);
+//
+    //        // Дропаем с небольшим случайным смещением
+    //        ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
+    //    }
+    //}
 
     @Override
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {

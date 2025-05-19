@@ -19,7 +19,7 @@ public class ModSoundEvents {
     }
     // ITEM_METAL_WHISTLE is the name of the custom sound event
     // and is called in the mod to use the custom sound
-    public static final SoundEvent HONK_SOUND = registerSound("honk"); // Honk sound
+    public static final SoundEvent BIKEHORN = registerSound("bikehorn"); // Honk sound
     public static final SoundEvent CROWBAR = registerSound("crowbar"); // Crowbar sound
     public static final SoundEvent WRENCH = registerSound("wrench");
     public static final SoundEvent GENHIT = registerSound("genhit");

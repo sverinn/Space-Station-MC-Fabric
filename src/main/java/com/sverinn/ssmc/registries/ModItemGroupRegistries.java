@@ -36,7 +36,7 @@ public class ModItemGroupRegistries {
         });
 
         ItemGroupEvents.modifyEntriesEvent(SSMC_GENERAL_ITEM_GROUP_KEY).register(itemGroup -> {
-            itemGroup.add(RODS);
+            itemGroup.add(PART_ROD_METAL);
             // ...
         });
 

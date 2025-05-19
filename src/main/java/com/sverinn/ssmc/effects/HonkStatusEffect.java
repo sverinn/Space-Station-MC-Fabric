@@ -7,7 +7,7 @@ import net.minecraft.sound.SoundCategory;
 
 import java.util.Random;
 
-import static com.sverinn.ssmc.audio.ModSoundEvents.HONK_SOUND;
+import static com.sverinn.ssmc.audio.ModSoundEvents.BIKEHORN;
 
 /**
  * Honk honk
@@ -30,7 +30,7 @@ public class HonkStatusEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         if (!entity.getWorld().isClient) {
-            entity.getWorld().playSound(null, entity.getBlockPos(), HONK_SOUND, SoundCategory.MASTER, 1f * amplifier, 0.5f + new Random().nextFloat()); // Higher amplifier gives you experience faster
+            entity.getWorld().playSound(null, entity.getBlockPos(), BIKEHORN, SoundCategory.MASTER, 1f * amplifier, 0.5f + new Random().nextFloat()); // Higher amplifier gives you experience faster
         }
     }
 }
