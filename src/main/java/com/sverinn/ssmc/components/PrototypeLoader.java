@@ -7,6 +7,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
 
+import static com.sverinn.ssmc.Ssmc.LOGGER;
+
 public class PrototypeLoader {
     public static void load() {
         // Путь к вашему YAML-файлу
@@ -21,7 +23,7 @@ public class PrototypeLoader {
             System.out.println("Loaded YAML: " + data);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error(String.valueOf(e));
         }
     }
 }

@@ -35,7 +35,7 @@ public abstract class Tile {
     private List<Double> placementVariants;
     private boolean weather;
     private boolean isSpace;
-    private Item itemDrop = ModItems.PART_ROD_METAL;
+    private final Item itemDrop = ModItems.PART_ROD_METAL;
     private int mass;
     private List<String> deconstructTools;
 

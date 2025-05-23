@@ -11,27 +11,29 @@ public class BaseToolItem extends Item {
     public BaseToolItem(Settings settings) {
         super(settings);
     }
-//    private final ToolPrototype prototype;
-//
-//            public BaseToolItem(ToolPrototype prototype) {
-//            super(new Settings().maxCount(1));
-//            this.prototype = prototype;
-//        }
-//
-//            public static void registerTools(List<ToolPrototype> prototypes) {
-//            for (ToolPrototype proto : prototypes) {
-//                    BaseToolItem tool = createToolFromPrototype(proto);
-//                    Registry.register(Registries.ITEM, new Identifier("ssmc", proto.getId()), tool);
-//                }
-//        }
-//
-//            private static BaseToolItem createToolFromPrototype(ToolPrototype proto) {
-//            // Здесь можно создать специализированные классы для разных типов инструментов
-//            if (proto.getId().equals("Multitool") || proto.getId().equals("Omnitool")) {
-//                    return new MultiFunctionToolItem(proto);
-//                } else if (proto.getId().equals("RCD")) {
-//                    return new RCDItem(proto);
-//                }
-//            return new BaseToolItem(proto);
-//        }
+/*
+ private final ToolPrototype prototype;
+
+            public BaseToolItem(ToolPrototype prototype) {
+            super(new Settings().maxCount(1));
+            this.prototype = prototype;
+        }
+
+            public static void registerTools(List<ToolPrototype> prototypes) {
+            for (ToolPrototype proto : prototypes) {
+                    BaseToolItem tool = createToolFromPrototype(proto);
+                    Registry.register(Registries.ITEM, new Identifier("ssmc", proto.getId()), tool);
+                }
+        }
+
+            private static BaseToolItem createToolFromPrototype(ToolPrototype proto) {
+
+            if (proto.getId().equals("Multitool") || proto.getId().equals("Omnitool")) {
+                    return new MultiFunctionToolItem(proto);
+                } else if (proto.getId().equals("RCD")) {
+                    return new RCDItem(proto);
+                }
+            return new BaseToolItem(proto);
+        }
+        */
 }

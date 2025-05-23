@@ -32,6 +32,12 @@ public class ModItemGroupRegistries {
 
         ItemGroupEvents.modifyEntriesEvent(SSMC_GENERAL_ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(SHEET_STEEL);
+            itemGroup.add(SHEET_GLASS);
+            itemGroup.add(SHEET_RGLASS);
+            itemGroup.add(PART_ROD_METAL);
+            itemGroup.add(BANANIUM);
+            itemGroup.add(CROWBAR);
+            itemGroup.add(CUTTERS);
             // ...
         });
 
@@ -40,9 +46,7 @@ public class ModItemGroupRegistries {
             // ...
         });
 
-        ItemGroupEvents.modifyEntriesEvent(SSMC_STRUCTURES_ITEM_GROUP_KEY).register((itemGroup) -> {
-            itemGroup.add(ModBlocks.PLATING.asItem());
-        });
+        ItemGroupEvents.modifyEntriesEvent(SSMC_STRUCTURES_ITEM_GROUP_KEY).register((itemGroup) -> itemGroup.add(ModBlocks.PLATING.asItem()));
 
         ItemGroupEvents.modifyEntriesEvent(SSMC_STRUCTURES_ITEM_GROUP_KEY).register(entries -> {
             for (TileBlockVariant variant : TileBlockVariant.values()) {

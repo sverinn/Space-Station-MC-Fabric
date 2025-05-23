@@ -1,5 +1,6 @@
 package com.sverinn.ssmc.enums;
 
+import com.sverinn.ssmc.tiles.Tile;
 import net.minecraft.util.StringIdentifiable;
 
 /**
@@ -29,9 +30,5 @@ public enum TileBlockVariant implements StringIdentifiable {
 
     public String getName() {
         return name;
-    }
-
-    public void append(Object object)
-    {
     }
 }

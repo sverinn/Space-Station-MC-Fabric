@@ -15,15 +15,12 @@ public class SoundDefinitionManager {
     public static void addSoundDefinition(Identifier soundId, String subtitleKey, Path path) {
         JsonObject soundEntry = new JsonObject();
 
-        // Добавляем субтитры
         soundEntry.addProperty("subtitle", subtitleKey);
 
-        // Добавляем пути к звукам
         JsonArray soundsArray = new JsonArray();
         soundsArray.add("ssmc:" + path.toString());
         soundEntry.add("sounds", soundsArray);
 
-        // Добавляем в основной json
         soundsJson.add(soundId.getPath(), soundEntry);
 
     }
@@ -31,17 +28,14 @@ public class SoundDefinitionManager {
     public static void addSoundDefinition(Identifier soundId, String subtitleKey, List<Path> paths) {
         JsonObject soundEntry = new JsonObject();
 
-        // Добавляем субтитры
         soundEntry.addProperty("subtitle", subtitleKey);
 
-        // Добавляем пути к звукам
         JsonArray soundsArray = new JsonArray();
         for (Path path : paths) {
             soundsArray.add("ssmc:" + path.toString());
         }
             soundEntry.add("sounds", soundsArray);
 
-        // Добавляем в основной json
         soundsJson.add(soundId.getPath(), soundEntry);
 
     }

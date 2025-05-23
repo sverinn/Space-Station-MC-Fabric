@@ -11,7 +11,7 @@ public class PrototypeComponent {
         return this.type;
     }
 
-    public YamlLayout getProperties() {
+    public @Nullable YamlLayout getProperties() {
 
         return this.properties;
     }
