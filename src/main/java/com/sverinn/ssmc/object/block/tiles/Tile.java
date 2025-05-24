@@ -1,8 +1,6 @@
-package com.sverinn.ssmc.tiles;
+package com.sverinn.ssmc.object.block.tiles;
 
-import com.sverinn.ssmc.object.item.ModItem;
 import com.sverinn.ssmc.object.item.ModItems;
-import net.minecraft.item.Items;
 import net.minecraft.item.Item;
 import net.minecraft.sound.SoundEvent;
 
@@ -39,6 +37,5 @@ public abstract class Tile {
     private int mass;
     private List<String> deconstructTools;
 
-    // Геттеры и сеттеры
     // ...
 }

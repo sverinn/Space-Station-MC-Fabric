@@ -1,4 +1,4 @@
-package com.sverinn.ssmc.object.block;
+package com.sverinn.ssmc.object.block.tiles;
 
 import com.sverinn.ssmc.enums.TileBlockVariant;
 import net.minecraft.block.Block;
@@ -7,17 +7,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
-import net.minecraft.util.ItemScatterer;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
 
 import static com.sverinn.ssmc.enums.TileBlockVariant.DARK;
 import static com.sverinn.ssmc.object.block.ModBlocks.TILE;
-import static com.sverinn.ssmc.object.item.ModItems.SHEET_GLASS;
-import static com.sverinn.ssmc.object.item.ModItems.SHEET_RGLASS;
 
+
+//TODO: Make this a horizontal surface only instead of full block
 
 /**
  * TILE Block class with multiple blockstate. Each blockstate has its own custom drop and model.
