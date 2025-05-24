@@ -4,6 +4,8 @@ import com.sverinn.ssmc.Ssmc;
 
 /**
  * Initialize all listeners
+ *
+ * For now, please use a listener for each unique Event type.
  */
 public class ModListeners {
     public static void initialize()

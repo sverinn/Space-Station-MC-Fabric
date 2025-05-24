@@ -2,6 +2,16 @@ package com.sverinn.ssmc.enums;
 
 import net.minecraft.util.StringIdentifiable;
 
+/**
+ * This is imported from SS14 Resources/Prototypes/*.yml
+ *
+ * *.yml:
+ * - type: Entity
+ *   id: something
+ *   components:
+ *   - type: SomeComponent <- this is what ComponentType enumerates
+ *     ...
+ */
 public enum ComponentType implements StringIdentifiable {
     ABSORBENT("Absorbent"),
     ACCENTLESS("Accentless"),

@@ -10,7 +10,7 @@ import java.util.Random;
 import static com.sverinn.ssmc.audio.ModSoundEvents.BIKEHORN;
 
 /**
- * Honk honk
+ * Honk status effect. Maybe rewrite this in the future.
  */
 public class HonkStatusEffect extends StatusEffect {
     protected HonkStatusEffect() {

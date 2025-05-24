@@ -2,6 +2,13 @@ package com.sverinn.ssmc.enums;
 
 import net.minecraft.util.StringIdentifiable;
 
+/**
+ * This is imported from SS14 Resources/Prototypes/*.yml
+ *
+ * *.yml:
+ * - type: Entity <- this is what PrototypeBase enumerates
+ *   id: something
+ */
 public enum PrototypeBase implements StringIdentifiable {
     ACCENT("accent"),
     ACCESSGROUP("accessGroup"),

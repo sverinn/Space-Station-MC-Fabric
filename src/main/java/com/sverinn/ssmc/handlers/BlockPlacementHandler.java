@@ -9,9 +9,8 @@ import net.minecraft.util.math.BlockPos;
 
 import static com.sverinn.ssmc.Ssmc.LOGGER;
 import static com.sverinn.ssmc.audio.ModSoundEvents.GENHIT;
-import static com.sverinn.ssmc.enums.TileBlockVariant.GLASS;
 import static com.sverinn.ssmc.object.block.ModBlocks.*;
-import static com.sverinn.ssmc.object.block.TileBlock.TILE_VARIANT;
+import static com.sverinn.ssmc.object.block.tiles.TileBlock.TILE_VARIANT;
 import static com.sverinn.ssmc.util.Util.playSoundAndSetBlock;
 
 /**

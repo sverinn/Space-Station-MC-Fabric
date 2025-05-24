@@ -18,16 +18,9 @@ public class TileBlockItem extends BlockItem {
 
     @Override
     public ActionResult place(ItemPlacementContext context) {
-        // Проверяем, что это сервер (чтобы избежать двойного срабатывания)
         if (!context.getWorld().isClient()) {
-            // Ваш кастомный код (например, сообщение, спавн сущности и т. д.)
             handleBlockPlacement(context);
-
-            // Можно, например, открыть GUI:
-            // ServerPlayNetworking.send((ServerPlayerEntity) player, ...);
         }
-
-        // Отменяем стандартное размещение блока
-        return ActionResult.FAIL; // FAIL предотвращает установку
+        return ActionResult.FAIL;
     }
 }

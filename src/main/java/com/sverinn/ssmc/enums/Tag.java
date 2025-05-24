@@ -2,6 +2,9 @@ package com.sverinn.ssmc.enums;
 
 import net.minecraft.util.StringIdentifiable;
 
+/**
+ * This is imported from SS14 Resources/Prototypes/tags.yml
+ */
 public enum Tag implements StringIdentifiable {
     ACCESSBREAKERIMMUNE("AccessBreakerImmune"),
     AIRALARM("AirAlarm"),

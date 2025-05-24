@@ -9,6 +9,11 @@ import net.minecraft.util.Identifier;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * This class provides automatic SoundEvent registration in sounds.json
+ */
+
+//TODO: Finish this
 public class SoundDefinitionManager {
     private static final JsonObject soundsJson = new JsonObject();
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();

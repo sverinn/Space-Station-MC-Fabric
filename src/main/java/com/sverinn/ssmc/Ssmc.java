@@ -33,7 +33,5 @@ public class Ssmc implements ModInitializer {
         ModBlocks.initialize();
         ModItemGroupRegistries.initialize();
         ModListeners.initialize();
-
-
     }
 }

@@ -6,7 +6,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-
+//TODO: Rewrite to allow dynamic import from Prototypes
 /**
  * Register sounds.
  * Don't forget to update assets/sounds.json

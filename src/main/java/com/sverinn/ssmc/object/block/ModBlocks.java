@@ -1,6 +1,7 @@
 package com.sverinn.ssmc.object.block;
 
 import com.sverinn.ssmc.Ssmc;
+import com.sverinn.ssmc.object.block.tiles.TileBlock;
 import com.sverinn.ssmc.object.item.TileBlockItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -11,6 +12,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+
+//TODO: Rewrite to allow dynamic import from Prototypes
 /**
  * Initialize registries and add custom blocks.
  * Don't forget to update assets/models/block, assets/models/item, assets/textures/block, assets/textures/item
